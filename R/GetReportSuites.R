@@ -9,7 +9,7 @@
 #' 
 #' @return Data frame 
 #' 
-#' @importFrom urltools erl_encode
+#' @importFrom urltools url_encode
 #' 
 #' @export
 #' 

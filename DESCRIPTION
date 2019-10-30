@@ -1,0 +1,9 @@
+Package: R2Adobe
+Version: 0.1
+Imports:
+    dplyr,
+    httr,
+    jose,
+    jsonlite,
+    lubridate,
+    urltools

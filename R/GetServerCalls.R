@@ -20,7 +20,7 @@ GetServerCalls <- function(start_date,
                            date_granularity = "day",
                            endpoint_number = "5-4",
                            verbosity = FALSE){
-  
+
   if(date_granularity == "year"){
     vars_to_agg <- c("year")
   } else if(date_granularity == "month"){
@@ -46,9 +46,9 @@ GetServerCalls <- function(start_date,
   
   for(i in 1:length(days)){
     print(paste0("beginning pull for ", days[i]))
-    url = paste0("https://appservice", endpoint_number,".omniture.com/analytics/1.0/servercallusage/servercalls/reportsuites?locale=en_US&expansions=reportSuiteName&start_date=", 
+    url = paste0("https://appservice", endpoint_number,".omniture.com/analytics/1.0/servercallusage/servercalls/reportsuites?locale=en_US&expansions=reportSuiteName&startDate=", 
                  days[i], 
-                 "&end_date=", 
+                 "&endDate=", 
                  days[i],
                  "&pagination=true&page=0&limit=1000")
     

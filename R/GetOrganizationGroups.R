@@ -32,7 +32,8 @@ GetOrganizationGroups <- function(progress_messages = TRUE,
     query_response <- JWTGet(url,
                              accept_header = "application/json",
                              content_type_header = "application/json",
-                             body_encoding = "json")
+                             body_encoding = "json",
+                             verbose_output = verbosity)
     
     ## Are there any errors specific to this kind of call not already handled by JWTGet?
     

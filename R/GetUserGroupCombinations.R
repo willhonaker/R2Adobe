@@ -16,6 +16,7 @@
 #' }
 #' 
 #' 
+#' 
 
 GetUserGroupCombinations <- function(progress_messages = TRUE,
                                      verbosity = FALSE){
@@ -37,7 +38,7 @@ GetUserGroupCombinations <- function(progress_messages = TRUE,
     if(is.null(single_user$groups[[1]])){
       single_user$groups[[1]] = "no groups"
     }
-    groups <- as.data.frame(single_user$groups[[1]])
+    groups <- as.data.frame(single_user$groups[[1]], stringsAsFactors = FALSE)
     names(groups) <- "groups"
     for(i in names(single_user)[names(single_user) != "groups"]){
       groups[i] <- single_user[i]
@@ -48,6 +49,7 @@ GetUserGroupCombinations <- function(progress_messages = TRUE,
   users_by_group <- do.call(rbind, org_users_list) %>%
     left_join(ui_user_groups, 
               by = c("groups" = "groupName"))
+  message(paste0("Returned data for ", nrow(users_by_group), " user-group combinations in your organization."))
   users_by_group
   
 }

@@ -20,7 +20,7 @@
 #' 
 #' 
 
-GetLicenseGroups <- function(item_id,
+JILLicenseGroups <- function(item_id,
                              token,
                              x_api_key,
                              get_by = "product",
@@ -58,7 +58,7 @@ GetLicenseGroups <- function(item_id,
     for(i in 1:length(licensegroup_data)){
       license_info <- licensegroup_data[[i]]
       license_info["fulfilledItems"] <- NULL ## beware of this hardcode
-      license_info <- as.data.frame(license_info)
+      license_info <- as.data.frame(license_info, stringsAsFactors = FALSE)
       licensegroup_list[[i]] <- license_info
     }
     

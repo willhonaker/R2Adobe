@@ -22,7 +22,7 @@
 JILProducts <- function(token, 
                         x_api_key,
                         verbosity = FALSE){
-  url <- paste0("https://bps-il.adobe.io/jil-api/v2/organizations/", AdobeAnalytics$JWT_Credentials$org_id, "/product")
+  url <- paste0("https://bps-il.adobe.io/jil-api/v2/organizations/", AdobeAnalytics$JWT_Credentials$org_id, "/products")
   
   product_data <- JILGet(url, 
                          token = token, 
@@ -36,7 +36,7 @@ JILProducts <- function(token,
       if(length(x) > 1){x <- paste(x, collapse = ";")}
       x
     })
-    product_list[[i]] <- as.data.frame(productinfoflat[lengths(productinfoflat) != 0]) 
+    product_list[[i]] <- as.data.frame(productinfoflat[lengths(productinfoflat) != 0], stringsAsFactors = FALSE) 
   }
   
   products <- bind_rows(product_list)

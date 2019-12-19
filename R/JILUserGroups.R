@@ -37,7 +37,7 @@ JILUserGroups <- function(token,
   usergroup_list <- list()
   for(i in 1:length(usergroup_data)){
     user_info <- usergroup_data[[i]]
-    user_info <- as.data.frame(user_info)
+    user_info <- as.data.frame(user_info, stringsAsFactors = FALSE)
     usergroup_list[[i]] <- user_info
   }
   

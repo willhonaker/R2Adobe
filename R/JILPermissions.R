@@ -15,12 +15,12 @@
 #' @export
 #' 
 #' @examples \dontrun{
-#' license_groups <- JILPermissions(item_id = myProduct, token = token, x_api_key = x_api_key)
+#' permissions_df <- JILPermissions(licensegroup_id = myLicenseGroup, product_id = myProduct, token = token, x_api_key = x_api_key)
 #' }
 #' 
 #' 
 
-JILPermissions <- function(license_group,
+JILPermissions <- function(licensegroup_id,
                            product_id,
                            token,
                            x_api_key,

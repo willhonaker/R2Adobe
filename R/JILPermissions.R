@@ -32,7 +32,7 @@ JILPermissions <- function(licensegroup_id,
                 "/products/",
                 product_id,
                 "/license-groups/", 
-                license_group,
+                licensegroup_id,
                 "/permissions")
   
   permissions_data <- JILGet(url = url,

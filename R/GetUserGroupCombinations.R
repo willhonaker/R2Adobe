@@ -47,8 +47,10 @@ GetUserGroupCombinations <- function(progress_messages = TRUE,
     org_users_list[[j]] <- groups
   }
   users_by_group <- do.call(rbind, org_users_list) %>%
-    left_join(ui_user_groups, 
-              by = c("groups" = "groupName"))
+                    left_join(ui_user_groups, 
+                              by = c("groups" = "groupName")) %>%
+                    rename(groupType = type.y,
+                           accountType = type.x)
   message(paste0("Returned data for ", nrow(users_by_group), " user-group combinations in your organization."))
   users_by_group
   

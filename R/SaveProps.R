@@ -8,10 +8,10 @@
 #' @param name
 #' @param description
 #' @param rsids
-#' @param allocation_type
-#' @param type
 #' @param enabled
-#' @param expiration_type
+#' @param pathing_enabled
+#' @param list_enabled
+#' @param participation_enabled
 #' @param verbosity
 #' 
 #' @return Message indicating that the prop was saved.

@@ -15,7 +15,7 @@
 #' 
 
 
-GetUserInfo <- function(userstring){
+GetUserInfo <- function(userstring, verbosity = FALSE){
   query_response <- JWTGet(url = paste0("https://usermanagement.adobe.io/v2/usermanagement/organizations/", 
                            AdobeAnalytics$JWT_Credentials$org_id,
                            "/users/",
@@ -23,7 +23,8 @@ GetUserInfo <- function(userstring){
                            ),
                      accept_header = "application/json",
                      content_type_header = "application/json",
-                     body_encoding = "json")
+                     body_encoding = "json",
+                     verbose_output = verbosity)
   
   if( !is.null(query_response$status_code) ){
     
@@ -44,7 +45,6 @@ GetUserInfo <- function(userstring){
 }
 
 
-## Testing
 
 
 

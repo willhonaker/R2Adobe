@@ -10,3 +10,6 @@ wh_alt_api.crt
 .RData
 .DS_store
 .DS_Store
+*.ipynb
+.ipynb_checkpoints
+*usermanagement*

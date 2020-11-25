@@ -1,6 +1,10 @@
 prepfile1.R
 usermanagement_r.config
 wh_aa_api_1.key
+wh_aa_api_2.key
+wh_aa_api_2.crt
+wh_alt_api.key
+wh_alt_api.crt
 .Rhistory
 .Rproj.user
 .RData

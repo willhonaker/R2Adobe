@@ -119,7 +119,20 @@ GetSegments <- function(include_type = "all",
     last_page_check <- query_response$lastPage
     }
     
-    final_segments_df <- bind_rows(segments_df_list)
+    final_segments_df <- bind_rows(segments_df_list) %>%
+      select(
+        rsid,
+        reportSuiteName,
+        owner.id,
+        owner.name,
+        owner.login,
+        id,
+        name,
+        description,
+        modified,
+        modifiedById
+      )
+    
     message(paste0("Returned information for ",
                    nrow(final_segments_df),
                    " segments."

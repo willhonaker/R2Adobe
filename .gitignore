@@ -13,3 +13,6 @@ wh_alt_api.crt
 *.ipynb
 .ipynb_checkpoints
 *usermanagement*
+*key*
+*crt*
+*config*

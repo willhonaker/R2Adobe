@@ -16,7 +16,7 @@ DeleteSegment <- function(
 ){
   result <- JWTDelete(
     "segments",
-    "id",
+    id,
     verbose_output = verbosity
   )
   

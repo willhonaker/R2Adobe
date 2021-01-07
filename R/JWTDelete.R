@@ -60,8 +60,7 @@ JWTDelete <- function(
   }
   
   if(report_request_raw$status_code == 404){
-    message("404: Item not found.")
-    readable_response <- report_request_raw
+    stop("404: Item not found.")
   } else if(report_request_raw$status_code != 200){
     error_response <- content(report_request_raw, as = "text",type="application/json", encoding = "UTF-8")
     error_response <- fromJSON(error_response, flatten = TRUE)

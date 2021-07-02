@@ -44,10 +44,10 @@ SaveEvars <- function(id,
                     allocation_type = allocation_type,
                     type = type,
                     enabled = enabled,
-                    expiration_type = expiration_type,
-                    merchandising_syntax = merchandising_syntax)
+                    expiration_type = expiration_type
+                    )
   
-  evar_info <- evar_info[-which(sapply(evar_info, is.null))]
+  evar_info <- c(evar_info, merchandising_syntax = merchandising_syntax)
 
   evar_info_df <- data.frame(evars = c(''))
   evar_info_df$evars <- list(data.frame(evar_info))

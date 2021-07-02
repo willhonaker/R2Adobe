@@ -35,6 +35,7 @@ SaveEvars <- function(id,
                      type = "0",
                      enabled = "true",
                      expiration_type = "0",
+                     merchandising_syntax = NULL,
                      verbosity = FALSE){
   
   evar_info <- list(id = id,
@@ -43,8 +44,11 @@ SaveEvars <- function(id,
                     allocation_type = allocation_type,
                     type = type,
                     enabled = enabled,
-                    expiration_type = expiration_type)
+                    expiration_type = expiration_type,
+                    merchandising_syntax = merchandising_syntax)
   
+  evar_info <- evar_info[-which(sapply(evar_info, is.null))]
+
   evar_info_df <- data.frame(evars = c(''))
   evar_info_df$evars <- list(data.frame(evar_info))
   evar_info_df$rsid_list <- list("the_rsid_list_goes_here")

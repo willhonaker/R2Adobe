@@ -18,7 +18,14 @@ TrendedDateReport <- function(
   
   metric_json <- ''
   for(i in metrics){
-    metric_json <- paste0(metric_json, '{"columnId":"',i,'", "id":"metrics/', i, '"},')
+    metric_json <- paste0(
+      metric_json, 
+      '{"columnId":"',
+      i,
+      ifelse(substring(i, 1, nchar("cm")) == "cm"  , '", "id":"','", "id":"metrics/'), 
+      i, 
+      '"},'
+      )
   }
   metric_json <- gsub(",$", "",metric_json)
   
